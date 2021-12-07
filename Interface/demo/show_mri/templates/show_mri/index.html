@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> My test page</title>
+        {% load static %}
+
+        <link rel="stylesheet" type="text/css" href="{% static 'show_mri/styles.css' %}"/>
+    </head>
+    <body>
+    <header>
+        <nav>
+
+            <ul>
+                <li>ABOUT</li>
+            </ul>
+            <hr>
+            <h1>
+                EC601 Group 5
+            </h1>
+        </nav>
+    </header>
+    <section>
+        <div class="row">
+            {% load static %}
+            <div class="side">
+                <input type="radio" name="patient-num">
+                <form action="#"> 
+                  <label for="pid">Patient ID</label>
+                  <select name="patient-id" id="pid">
+
+                    {% for pn in patient_list %}
+                    <option value="{{ pn }}">{{ pn }}</option>
+                    {% endfor %}
+
+
+                  </select>
+                  <hr>
+                  <input type="radio" name="Sampling" value="m32">
+                  <label>Centered 32</label> 
+                  <input type="radio" name="Sampling" text="d32">
+                  <label>Equally Distributed 32</label> 
+                  <hr>
+                  <input type="radio" name="MRI-type" value="FLAIR">
+                  <label>FLAIR</label> 
+                  <input type="radio" name="MRI-type" text="T1">
+                  <label>T1</label> 
+                  <input type="radio" name="MRI-type" text=T2>
+                  <label>T2</label> 
+                  <input type="radio" name="MRI-type" text="T1w">
+                  <label>T1w 32</label> 
+                  <hr>
+                  <input type="submit" value="Rendering" />
+                </form>
+                <form>
+                    <input type="file" id="MRI_DIR" webkitdirectory directory multiple name="MRI_DIR"/>
+
+                </form>
+            </div>
+
+
+            <div class="column">        
+
+                {% for pt in col1_image_path %}
+                    <img class="slice" src="{% static pt %}">
+                {% endfor %}
+
+            </div>
+            <div class="column">        
+                {% for pt in col2_image_path %}
+                    <img class="slice" src="{% static pt %}">
+                {% endfor %}
+            </div>
+            <div class="column">        
+                {% for pt in col3_image_path %}
+                    <img class="slice" src="{% static pt %}">
+                {% endfor %}
+            </div>
+            <div class="column">        
+                {% for pt in col4_image_path %}
+                    <img class="slice" src="{% static pt %}">
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    </body>
+
+</html>

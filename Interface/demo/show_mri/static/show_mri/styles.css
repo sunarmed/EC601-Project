@@ -1,0 +1,31 @@
+.testborder {
+	border-color: red;
+	border-width: thin;
+}
+
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0 4px;
+}
+
+.slice{
+	background-color: grey;
+}
+
+div .column {
+	flex: 15%;
+	width: 150px;
+}
+
+.side{
+	flex: 10%;
+	background-color: green;
+}
+
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}

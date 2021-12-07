@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'show_mri.apps.ShowMriConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
