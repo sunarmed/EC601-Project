@@ -18,3 +18,8 @@ https://varhowto.com/install-pytorch-ubuntu-20-04/
 https://medium.com/@sergioalves94/deep-learning-in-pytorch-with-cifar-10-dataset-858b504a6b54
 
 The CIFAR-10 data is stored in a subdirectory: data/
+
+
+# Interface
+
+Now we have a web-based interface for rendering, uploading
