@@ -33,38 +33,81 @@
         <div class="row">
             {% load static %}
             <div class="side">
-                <input type="radio" name="patient-num">
                 <form action="#"> 
-                  <label for="pid">Patient ID</label>
-                  <select name="patient-id" id="pid">
+                    <h3 id="side-title">
+                        Image Sample Selection  
+                    </h3>
+                    <hr>
+                  <label for="pid" class="rlabel">Select ID</label>
+                  <div class="select-container">
+                      <div class="select">
+                          <select id="pid" name="patient-id">
 
-                    {% for pn in patient_list %}
-                    <option value="{{ pn }}">{{ pn }}</option>
-                    {% endfor %}
+                            {% for pn in patient_list %}
+                            <option value="{{ pn }}">{{ pn }}</option>
+                            {% endfor %}
 
 
-                  </select>
-                  <hr>
-                  <input type="radio" name="Sampling" value="m32">
-                  <label>Centered 32</label> 
-                  <input type="radio" name="Sampling" text="d32">
-                  <label>Equally Distributed 32</label> 
-                  <hr>
-                  <input type="radio" name="MRI-type" value="FLAIR">
-                  <label>FLAIR</label> 
-                  <input type="radio" name="MRI-type" text="T1">
-                  <label>T1</label> 
-                  <input type="radio" name="MRI-type" text=T2>
-                  <label>T2</label> 
-                  <input type="radio" name="MRI-type" text="T1w">
-                  <label>T1w 32</label> 
-                  <hr>
-                  <input type="submit" value="Rendering" />
+                          </select>
+                          <span class="focus"></span>
+                      </div>
+                  
+                  </div>
+                  <div class="select-container">
+                     <label class="rlabel">MGMT Score = {{MGMT_score}}</label>
+                  </div>
+                  <div>
+                  <label class="rlabel">
+                      Select Sampling Strategy
+                  </label>
+                  </div>
+                  <div class="radio-container">
+
+                    <label class="radio">
+                        <input type="radio" name="Sampling" value="m32">
+                        <span>Centered</span>
+                    </label> 
+                    <label class="radio">
+                        <input type="radio" name="Sampling" text="d32" checked>
+                        <span>Equally Distributed</span>
+                    </label> 
+                  </div>
+                  <label class="rlabel">
+                      MRI Imaging Type
+                  </label>
+                  <div class="radio-container">
+
+                    <label class="radio">
+                        <input type="radio" name="MRI-type" value="FLAIR" checked>
+                        <span>FLAIR</span>
+                    </label> 
+                    <label class="radio">
+                        <input type="radio" name="MRI-type" text="T1">
+                        <span>T1</span>
+                    </label> 
+                    <label class="radio">
+                        <input type="radio" name="MRI-type" text=T2>
+                        <span>T2</span>
+                    </label> 
+                    <label class="radio">
+                        <input type="radio" name="MRI-type" text="T1w">
+                        <span>T1wCE</span>
+                    </label> 
+
+                  </div>
+                  <input type="submit" value="Rendering" class="button-4"/>
                 </form>
-                <form>
-                    <input type="file" id="MRI_DIR" webkitdirectory directory multiple name="MRI_DIR"/>
-
-                </form>
+                <div class="upload">
+                    <label style="font-size: bold;">
+                        Upload a new MRI set
+                    </label>
+                    <form>
+                        <input type="file" id="MRI_DIR" webkitdirectory directory multiple name="MRI_DIR"/>
+                        <br><br>
+                        <input type="submit" name="test-set" value="Upload Test">
+                        <input type="submit" name="train-set" value="Upload Train">
+                    </form>
+                </div>
             </div>
 
 
