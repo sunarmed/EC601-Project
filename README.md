@@ -1,6 +1,10 @@
 # EC601-Project
 EC601 Project Repository
 
+Link to Group Project Repository
+https://github.com/YunjieH/EC-601-A1-Group5
+
+
 # My Device
 Architecture:                    x86_64
 CPU(s):                          4
