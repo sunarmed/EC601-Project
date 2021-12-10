@@ -141,3 +141,10 @@ def index(request):
 		}
 
 	return HttpResponse(template.render(context,request))
+
+def aboutpage(request):
+	template = loader.get_template('show_mri/about.html')
+	context = {  'YAY' : 'YAY',
+			}
+
+	return HttpResponse(template.render(context,request))

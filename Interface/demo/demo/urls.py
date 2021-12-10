@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from .views import redirect_view 
 
 urlpatterns = [
+    path('', redirect_view),
     path('show_mri/',include('show_mri.urls')),
     path('admin/', admin.site.urls),
+
 ]
